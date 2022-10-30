@@ -1,3 +1,4 @@
+import typing
 class Dict:
     description = "Work with dictionaries"
 
@@ -26,7 +27,7 @@ class Dict:
         for i in self.dict_:
             dict_2 = self.dict_[i]
             if dict_2 > 13:
-                print(i, end=" ")
+                return i
 
 
 convert_ = Dict("python", {}, {}, {})
@@ -36,3 +37,25 @@ highest_dict = Dict({}, {"num_1": 10, "num_2": 21, "num_3": 13, "num_4": 32, "nu
 Dict.convertation(convert_)
 Dict.without_duplicates(duplicates)
 Dict.highest(highest_dict)
+
+
+
+
+
+class Circle:
+
+     def __init__(self, p, radius):
+         self.p = p
+         self.r = radius
+
+     def area_of_circle(self) -> typing.Union[int, float]:
+         return self.p * self.r**2
+
+     def perimeter_of_circle(self) -> typing.Union[int, float]:
+         return 2 * self.p * self.r
+
+
+area_perimeter = Circle(3.14, 20)
+
+print("The area of circle will be: ", area_perimeter.area_of_circle())
+print("The perimeter of circle will be: ", area_perimeter.perimeter_of_circle())

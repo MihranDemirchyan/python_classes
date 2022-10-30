@@ -165,12 +165,7 @@
 
 
 
-def highest()
-dict_ = {"a": 10, "b": 21, "c": 13, "d": 32, "e": 40}
-for i in dict_:
-    dict_2 = dict_[i]
-    if dict_2 > 13:
-        print(i, end=" ")
+
 
 
 
