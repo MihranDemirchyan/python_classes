@@ -1,66 +1,66 @@
-# class Country:
-#     def __init__(self, country_name, continent, *args, **kwargs):
-#         self.country_name = country_name
-#         self.continent = continent
-#         super().__init__(*args, **kwargs)
-#
-#     def present(self):
-#         return f"The country is {self.country_name} which is located in {self.continent}."
-#
-#
-# class Brand:
-#     def __init__(self, brand_name, date, *args, **kwargs):
-#         self.brand_name = brand_name
-#         self.date = date
-#         super().__init__(*args, **kwargs)
-#
-#     def present(self):
-#         return f"Brand is well-known {self.brand_name}, which has started its career in {self.date}."
-#
-#
-# class Season:
-#     def __init__(self, season_name, *args, **kwargs):
-#         self.season_name = season_name
-#         self.temperature = []
-#         super().__init__(*args, **kwargs)
-#
-#     def add_of_temp(self, temp_1):
-#         self.temperature.append(temp_1)
-#
-#     def avg_temperature(self):
-#         average = sum(self.temperature) / len(self.temperature)
-#         return average
-#
-#     def present(self):
-#         return f"The most appropriate season is {self.season_name} and the average temperature " \
-#                f"for {self.season_name} is {self.avg_temperature()}."
-#
-#
-# class Product(Country, Brand, Season):
-#     def __init__(self, product_name, product_type, product_price, *args, **kwargs):
-#         self.product_name = product_name
-#         self.product_type = product_type
-#         self.product_price = product_price
-#         super().__init__(*args, **kwargs)
-#
-#     def present(self):
-#         print(f"{Country.present(self)} {Brand.present(self)} {Season.present(self)} "
-#               f"We are introducing our new product which name is {self.product_name}, "
-#               f"the type of our product is {self.product_type}"
-#               f" and it costs {self.product_price}$")
-#
-#
-# pr = Product(product_name="Belvin Calfskin Slipper", product_type="shoes", product_price=800, country_name="USA",
-#              continent="North America", brand_name="Ralph Lauren", date=1967, season_name="Summer")
-#
-# pr.add_of_temp(30)
-# pr.add_of_temp(33)
-# pr.add_of_temp(28)
-# pr.add_of_temp(40)
-#
-# print(Product.__mro__)
-#
-# pr.present()
+class Country:
+    def __init__(self, country_name, continent, *args, **kwargs):
+        self.country_name = country_name
+        self.continent = continent
+        super().__init__(*args, **kwargs)
+
+    def present(self):
+        return f"The country is {self.country_name} which is located in {self.continent}."
+
+
+class Brand:
+    def __init__(self, brand_name, date, *args, **kwargs):
+        self.brand_name = brand_name
+        self.date = date
+        super().__init__(*args, **kwargs)
+
+    def present(self):
+        return f"Brand is well-known {self.brand_name}, which has started its career in {self.date}."
+
+
+class Season:
+    def __init__(self, season_name, *args, **kwargs):
+        self.season_name = season_name
+        self.temperature = []
+        super().__init__(*args, **kwargs)
+
+    def add_of_temp(self, temp_1):
+        self.temperature.append(temp_1)
+
+    def avg_temperature(self):
+        average = sum(self.temperature) / len(self.temperature)
+        return average
+
+    def present(self):
+        return f"The most appropriate season is {self.season_name} and the average temperature " \
+               f"for {self.season_name} is {self.avg_temperature()}."
+
+
+class Product(Country, Brand, Season):
+    def __init__(self, product_name, product_type, product_price, *args, **kwargs):
+        self.product_name = product_name
+        self.product_type = product_type
+        self.product_price = product_price
+        super().__init__(*args, **kwargs)
+
+    def present(self):
+        print(f"{Country.present(self)} {Brand.present(self)} {Season.present(self)} "
+              f"We are introducing our new product which name is {self.product_name}, "
+              f"the type of our product is {self.product_type}"
+              f" and it costs {self.product_price}$")
+
+
+pr = Product(product_name="Belvin Calfskin Slipper", product_type="shoes", product_price=800, country_name="USA",
+             continent="North America", brand_name="Ralph Lauren", date=1967, season_name="Summer")
+
+pr.add_of_temp(30)
+pr.add_of_temp(33)
+pr.add_of_temp(28)
+pr.add_of_temp(40)
+
+print(Product.__mro__)
+
+pr.present()
 
 
 class Hotel:
